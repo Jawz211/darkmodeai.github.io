@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop — DarkModeAI</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#000;color:#00ff41;font-family:'Courier New',monospace;}
+  a{text-decoration:none;color:inherit;}
+  .terminal-bar{background:#001a00;padding:8px 24px;font-size:11px;color:#00ff4166;letter-spacing:1px;border-bottom:1px solid #00ff4122;}
+  .blink{animation:blink 1.2s step-end infinite;}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:1px solid #00ff4133;}
+  .logo{font-size:18px;font-weight:500;letter-spacing:2px;}
+  .logo span{color:#00ff4166;}
+  .nav-links{display:flex;gap:24px;}
+  .nav-links a{color:#00ff4199;font-size:13px;letter-spacing:1px;}
+  .nav-links a:hover,.nav-links a.active{color:#00ff41;}
+  .hero{padding:40px 24px 32px;border-bottom:1px solid #00ff4122;text-align:center;}
+  .hero-tag{font-size:11px;letter-spacing:3px;color:#00ff4166;margin-bottom:12px;}
+  .hero h1{font-size:24px;font-weight:500;margin-bottom:12px;letter-spacing:1px;}
+  .hero-sub{font-size:13px;color:#00ff4199;max-width:480px;margin:0 auto;line-height:1.7;}
+  .stock-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#00ff4122;}
+  .stock-item{background:#000;padding:10px 12px;text-align:center;}
+  .stock-item.available{background:#001a00;}
+  .stock-label{font-size:10px;letter-spacing:2px;color:#00ff4166;margin-bottom:3px;}
+  .stock-status{font-size:11px;color:#00ff41;letter-spacing:1px;}
+  .stock-status.out{color:#ff4444;}
+  .section{padding:32px 24px;border-bottom:1px solid #00ff4122;}
+  .section-tag{font-size:11px;letter-spacing:3px;color:#00ff4166;margin-bottom:8px;}
+  .section h2{font-size:18px;font-weight:500;margin-bottom:24px;}
+  .packages{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:#00ff4122;}
+  .pkg{background:#000;padding:24px 20px;display:flex;flex-direction:column;}
+  .pkg.featured{background:#001a00;}
+  .pkg.unavailable{background:#0a0a0a;opacity:0.6;}
+  .pkg-badge{font-size:10px;letter-spacing:2px;color:#000;background:#00ff41;padding:3px 10px;margin-bottom:16px;display:inline-block;align-self:flex-start;}
+  .pkg-badge.out{background:#ff4444;color:#000;}
+  .pkg-badge.waitlist{background:#333;color:#00ff4199;}
+  .pkg-name{font-size:12px;letter-spacing:3px;color:#00ff4166;margin-bottom:4px;}
+  .pkg-price{font-size:32px;font-weight:500;margin-bottom:4px;}
+  .pkg.unavailable .pkg-price{color:#00ff4144;}
+  .pkg-tagline{font-size:11px;color:#00ff4199;margin-bottom:20px;font-style:italic;}
+  hr{border:none;border-top:1px solid #00ff4122;margin:0 0 16px;}
+  .pkg-features{list-style:none;padding:0;margin:0 0 20px;flex:1;}
+  .pkg-features li{font-size:11px;color:#00ff4199;padding:5px 0;border-bottom:1px solid #00ff4111;letter-spacing:1px;display:flex;align-items:center;gap:8px;}
+  .dot{width:5px;height:5px;background:#00ff41;flex-shrink:0;}
+  .dot.dead{background:#333;}
+  .pkg-features.dim li{color:#00ff4133;}
+  .pkg-btn{width:100%;background:transparent;border:1px solid #00ff4166;color:#00ff41;padding:10px;font-family:'Courier New',monospace;font-size:11px;letter-spacing:2px;cursor:pointer;margin-top:auto;}
+  .pkg.featured .pkg-btn{background:#00ff41;color:#000;border-color:#00ff41;font-weight:500;}
+  .pkg-btn.disabled{border-color:#ffffff11;color:#00ff4144;cursor:not-allowed;}
+  .pkg-btn.waitlist-btn{border-color:#ff444466;color:#ff4444;}
+  .compare{width:100%;border-collapse:collapse;font-size:12px;}
+  .compare th{font-size:10px;letter-spacing:2px;color:#00ff4166;padding:8px 12px;border-bottom:1px solid #00ff4122;text-align:left;font-weight:400;}
+  .compare th.unavail{color:#ffffff22;}
+  .compare td{padding:10px 12px;border-bottom:1px solid #00ff4111;color:#00ff4199;font-size:11px;}
+  .compare td:first-child{color:#00ff41;}
+  .compare td.unavail{color:#ffffff22;}
+  .compare tr:hover td{background:#001a00;}
+  .yes{color:#00ff41;}
+  .no{color:#00ff4133;}
+  .faq{display:flex;flex-direction:column;gap:1px;background:#00ff4122;}
+  .faq-item{background:#000;padding:16px 20px;}
+  .faq-q{font-size:12px;color:#00ff41;letter-spacing:1px;margin-bottom:8px;}
+  .faq-q::before{content:"Q: ";color:#00ff4166;}
+  .faq-a{font-size:11px;color:#00ff4199;line-height:1.7;}
+  .faq-a::before{content:"A: ";color:#00ff4166;}
+  .guarantee{background:#001a00;border:1px solid #00ff4133;padding:24px;display:flex;gap:20px;align-items:flex-start;}
+  .guarantee-icon{font-size:20px;color:#00ff41;flex-shrink:0;}
+  .guarantee-title{font-size:13px;letter-spacing:2px;color:#00ff41;margin-bottom:6px;font-weight:500;}
+  .guarantee-text{font-size:11px;color:#00ff4199;line-height:1.6;}
+  .notify{background:#0a0000;border:1px solid #ff444433;padding:16px 20px;margin-top:24px;display:flex;align-items:center;gap:16px;}
+  .notify-dot{width:8px;height:8px;background:#ff4444;flex-shrink:0;animation:blink 1.2s step-end infinite;}
+  .notify-text{font-size:11px;color:#ff444499;letter-spacing:1px;line-height:1.6;}
+  .notify-text span{color:#ff4444;}
+  footer{padding:24px;text-align:center;border-top:1px solid #00ff4122;}
+  footer p{font-size:11px;color:#00ff4133;letter-spacing:2px;}
+  @media(max-width:600px){.stock-bar{grid-template-columns:repeat(2,1fr);}.nav-links{gap:12px;}}
+</style>
+</head>
+<body>
+<div class="terminal-bar">// file: shop.exe &nbsp;|&nbsp; inventory: partial &nbsp;|&nbsp; 2 packages available <span class="blink">_</span></div>
+<nav>
+  <div class="logo">DARKMODE<span>AI</span></div>
+  <div class="nav-links">
+    <a href="index.html">home</a>
+    <a href="about.html">about</a>
+    <a href="shop.html" class="active">shop</a>
+    <a href="contact.html">contact</a>
+  </div>
+</nav>
+<div class="hero">
+  <div class="hero-tag">// select your intelligence package</div>
+  <h1>Own your AI. Own your privacy.</h1>
+  <p class="hero-sub">Every package ships ready to use. Plug into any computer and start immediately. No setup. No accounts. No internet required.</p>
+</div>
+<div class="stock-bar">
+  <div class="stock-item available"><div class="stock-label">// basic</div><div class="stock-status">in stock</div></div>
+  <div class="stock-item available"><div class="stock-label">// standard</div><div class="stock-status">in stock</div></div>
+  <div class="stock-item"><div class="stock-label">// premium</div><div class="stock-status out">high demand</div></div>
+  <div class="stock-item"><div class="stock-label">// business</div><div class="stock-status out">waitlist only</div></div>
+</div>
+<div class="section">
+  <div class="section-tag">// choose your level</div>
+  <h2>All packages. One time payment.</h2>
+  <div class="packages">
+    <div class="pkg">
+      <div class="pkg-name">PACKAGE 01</div>
+      <div class="pkg-price">$45</div>
+      <div class="pkg-tagline">Perfect for getting started</div>
+      <hr>
+      <ul class="pkg-features">
+        <li><span class="dot"></span>64GB USB 3.0 flash drive</li>
+        <li><span class="dot"></span>2 AI models installed</li>
+        <li><span class="dot"></span>Windows + Mac ready</li>
+        <li><span class="dot"></span>Instruction card included</li>
+        <li><span class="dot"></span>Plug and play ready</li>
+      </ul>
+      <a href="contact.html"><button class="pkg-btn">ORDER BASIC — $45</button></a>
+    </div>
+    <div class="pkg featured">
+      <div class="pkg-badge">MOST POPULAR</div>
+      <div class="pkg-name">PACKAGE 02</div>
+      <div class="pkg-price">$85</div>
+      <div class="pkg-tagline">Best value for most users</div>
+      <hr>
+      <ul class="pkg-features">
+        <li><span class="dot"></span>64GB USB 3.0 flash drive</li>
+        <li><span class="dot"></span>4 AI models installed</li>
+        <li><span class="dot"></span>Windows + Mac ready</li>
+        <li><span class="dot"></span>Instruction card included</li>
+        <li><span class="dot"></span>Plug and play ready</li>
+        <li><span class="dot"></span>Printed setup guide</li>
+        <li><span class="dot"></span>30 days support included</li>
+      </ul>
+      <a href="contact.html"><button class="pkg-btn">ORDER STANDARD — $85</button></a>
+    </div>
+    <div class="pkg unavailable">
+      <div class="pkg-badge out">HIGH DEMAND</div>
+      <div class="pkg-name">PACKAGE 03</div>
+      <div class="pkg-price">$150</div>
+      <div class="pkg-tagline">Restocking soon</div>
+      <hr>
+      <ul class="pkg-features dim">
+        <li><span class="dot dead"></span>Fast 64GB USB 3.1 drive</li>
+        <li><span class="dot dead"></span>6 AI models installed</li>
+        <li><span class="dot dead"></span>Windows + Mac ready</li>
+        <li><span class="dot dead"></span>Full printed manual</li>
+        <li><span class="dot dead"></span>90 days support included</li>
+      </ul>
+      <button class="pkg-btn disabled" disabled>// currently unavailable</button>
+    </div>
+    <div class="pkg unavailable">
+      <div class="pkg-badge waitlist">WAITLIST ONLY</div>
+      <div class="pkg-name">PACKAGE 04</div>
+      <div class="pkg-price">$300+</div>
+      <div class="pkg-tagline">Contact us to join waitlist</div>
+      <hr>
+      <ul class="pkg-features dim">
+        <li><span class="dot dead"></span>Multiple drives included</li>
+        <li><span class="dot dead"></span>Custom AI models</li>
+        <li><span class="dot dead"></span>Windows + Mac ready</li>
+        <li><span class="dot dead"></span>Full printed manuals</li>
+        <li><span class="dot dead"></span>Ongoing support plan</li>
+      </ul>
+      <a href="contact.html"><button class="pkg-btn waitlist-btn">JOIN WAITLIST</button></a>
+    </div>
+  </div>
+  <div class="notify">
+    <div class="notify-dot"></div>
+    <div class="notify-text"><span>Premium and Business packages</span> are currently unavailable due to high demand. Want to be notified when they restock? <span>Contact us</span> to join the waitlist and be first in line.</div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-tag">// side by side</div>
+  <h2>Compare packages.</h2>
+  <table class="compare">
+    <thead>
+      <tr>
+        <th>FEATURE</th>
+        <th>BASIC</th>
+        <th>STANDARD</th>
+        <th class="unavail">PREMIUM</th>
+        <th class="unavail">BUSINESS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Price</td><td>$45</td><td>$85</td><td class="unavail">$150</td><td class="unavail">$300+</td></tr>
+      <tr><td>AI models</td><td>2</td><td>4</td><td class="unavail">6</td><td class="unavail">Custom</td></tr>
+      <tr><td>Drive speed</td><td>USB 3.0</td><td>USB 3.0</td><td class="unavail">USB 3.1</td><td class="unavail">USB 3.1</td></tr>
+      <tr><td>Windows + Mac</td><td class="yes">yes</td><td class="yes">yes</td><td class="unavail">yes</td><td class="unavail">yes</td></tr>
+      <tr><td>Printed guide</td><td class="no">—</td><td class="yes">yes</td><td class="unavail">full manual</td><td class="unavail">yes</td></tr>
+      <tr><td>Support</td><td class="no">—</td><td>30 days</td><td class="unavail">90 days</td><td class="unavail">ongoing</td></tr>
+      <tr><td>Specialized models</td><td class="no">—</td><td class="no">—</td><td class="unavail">yes</td><td class="unavail">custom</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="section">
+  <div class="section-tag">// before you order</div>
+  <h2>Common questions.</h2>
+  <div class="faq">
+    <div class="faq-item"><div class="faq-q">Do I need internet to use this?</div><div class="faq-a">Never. Once set up the drive works completely offline on any compatible computer. No WiFi, no data plan, no connection of any kind required.</div></div>
+    <div class="faq-item"><div class="faq-q">Will it work on my computer?</div><div class="faq-a">Yes. Every package supports both Windows and Mac. Your computer needs at least 8GB RAM and a USB 3.0 port — standard on virtually all computers made after 2015.</div></div>
+    <div class="faq-item"><div class="faq-q">Do I need to install anything?</div><div class="faq-a">Nothing. The app and all AI models live on the flash drive. Just plug it in and open the app directly from the drive. No admin rights needed.</div></div>
+    <div class="faq-item"><div class="faq-q">Is my data really private?</div><div class="faq-a">100%. Everything runs locally on your machine. Nothing is transmitted, logged, or stored anywhere outside your device. Not by us. Not by anyone.</div></div>
+    <div class="faq-item"><div class="faq-q">When will Premium and Business restock?</div><div class="faq-a">We are working to restock as soon as possible. Contact us to join the waitlist and you will be notified the moment they become available again.</div></div>
+  </div>
+</div>
+<div class="section">
+  <div class="guarantee">
+    <div class="guarantee-icon">[!]</div>
+    <div>
+      <div class="guarantee-title">// satisfaction guaranteed</div>
+      <div class="guarantee-text">Not happy with your purchase? Contact us within 14 days of receiving your order and we will make it right. Every drive is tested and verified before it ships. We stand behind every single unit we send out.</div>
+    </div>
+  </div>
+</div>
+<footer>
+  <p>// darkmodeai.net &nbsp;|&nbsp; operating in the shadows since 2026 &nbsp;|&nbsp; all rights reserved <span class="blink">_</span></p>
+</footer>
+</body>
+</html>

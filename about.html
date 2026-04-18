@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — DarkModeAI</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#000;color:#00ff41;font-family:'Courier New',monospace;}
+  a{text-decoration:none;color:inherit;}
+  .terminal-bar{background:#001a00;padding:8px 24px;font-size:11px;color:#00ff4166;letter-spacing:1px;border-bottom:1px solid #00ff4122;}
+  .blink{animation:blink 1.2s step-end infinite;}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:1px solid #00ff4133;}
+  .logo{font-size:18px;font-weight:500;letter-spacing:2px;}
+  .logo span{color:#00ff4166;}
+  .nav-links{display:flex;gap:24px;}
+  .nav-links a{color:#00ff4199;font-size:13px;letter-spacing:1px;}
+  .nav-links a:hover,.nav-links a.active{color:#00ff41;}
+  .hero{padding:48px 24px 40px;border-bottom:1px solid #00ff4122;}
+  .hero-tag{font-size:11px;letter-spacing:3px;color:#00ff4166;margin-bottom:12px;}
+  .hero h1{font-size:26px;font-weight:500;margin-bottom:16px;letter-spacing:1px;line-height:1.3;}
+  .hero-sub{font-size:14px;color:#00ff4199;max-width:560px;line-height:1.8;}
+  .section{padding:40px 24px;border-bottom:1px solid #00ff4122;}
+  .section-tag{font-size:11px;letter-spacing:3px;color:#00ff4166;margin-bottom:8px;}
+  .section h2{font-size:20px;font-weight:500;margin-bottom:16px;}
+  .story-block{border-left:2px solid #00ff4133;padding-left:20px;margin-bottom:24px;}
+  .story-label{font-size:10px;letter-spacing:3px;color:#00ff4166;margin-bottom:8px;}
+  .story-text{font-size:13px;color:#00ff4199;line-height:1.8;}
+  .story-text span{color:#00ff41;}
+  .values{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:#00ff4122;}
+  .value{background:#000;padding:20px 16px;}
+  .value-num{font-size:28px;font-weight:500;color:#00ff4133;margin-bottom:8px;}
+  .value-title{font-size:12px;letter-spacing:2px;color:#00ff41;margin-bottom:6px;font-weight:500;}
+  .value-text{font-size:11px;color:#00ff4199;line-height:1.6;}
+  .manifesto{background:#001a00;border:1px solid #00ff4133;padding:28px 24px;}
+  .manifesto-tag{font-size:10px;letter-spacing:3px;color:#00ff4166;margin-bottom:16px;}
+  .manifesto ul{list-style:none;padding:0;margin:0;}
+  .manifesto ul li{font-size:13px;color:#00ff41;padding:6px 0;border-bottom:1px solid #00ff4111;letter-spacing:1px;}
+  .manifesto ul li::before{content:"// ";color:#00ff4166;}
+  .cta{padding:40px 24px;text-align:center;border-bottom:1px solid #00ff4122;}
+  .cta-tag{font-size:11px;letter-spacing:3px;color:#00ff4166;margin-bottom:12px;}
+  .cta h2{font-size:20px;font-weight:500;margin-bottom:8px;}
+  .cta-sub{font-size:13px;color:#00ff4199;margin-bottom:24px;}
+  .btn-primary{background:#00ff41;color:#000;border:none;padding:12px 32px;font-family:'Courier New',monospace;font-size:13px;letter-spacing:2px;cursor:pointer;font-weight:500;}
+  .btn-ghost{background:transparent;color:#00ff41;border:1px solid #00ff4166;padding:12px 32px;font-family:'Courier New',monospace;font-size:13px;letter-spacing:2px;cursor:pointer;margin-left:12px;}
+  footer{padding:24px;text-align:center;border-top:1px solid #00ff4122;}
+  footer p{font-size:11px;color:#00ff4133;letter-spacing:2px;}
+  @media(max-width:600px){.hero h1{font-size:20px;}.nav-links{gap:12px;}}
+</style>
+</head>
+<body>
+<div class="terminal-bar">// file: about.exe &nbsp;|&nbsp; clearance: public &nbsp;|&nbsp; classification: open source <span class="blink">_</span></div>
+<nav>
+  <div class="logo">DARKMODE<span>AI</span></div>
+  <div class="nav-links">
+    <a href="index.html">home</a>
+    <a href="about.html" class="active">about</a>
+    <a href="shop.html">shop</a>
+    <a href="contact.html">contact</a>
+  </div>
+</nav>
+<div class="hero">
+  <div class="hero-tag">// origin.log — declassified</div>
+  <h1>We believe AI should belong<br>to everyone. Not just the cloud.</h1>
+  <p class="hero-sub">DarkModeAI was built on a simple idea — powerful artificial intelligence shouldn't require a monthly subscription, an internet connection, or giving up your privacy to a corporation that profits from your data.</p>
+</div>
+<div class="section">
+  <div class="section-tag">// the origin story</div>
+  <h2>How it started.</h2>
+  <div class="story-block">
+    <div class="story-label">// chapter 01 — the problem</div>
+    <p class="story-text">AI exploded overnight. Suddenly everyone wanted access — students, small business owners, doctors, writers, everyday people. But the tools that existed required <span>monthly fees</span>, an internet connection, and handing over every word you typed to a corporation's server. That felt wrong.</p>
+  </div>
+  <div class="story-block">
+    <div class="story-label">// chapter 02 — the idea</div>
+    <p class="story-text">What if AI could live on something as simple as a <span>flash drive</span>? Plug it in anywhere. No setup. No accounts. No internet. No data leaving your hands. Just intelligence — available to anyone, anywhere, at any time.</p>
+  </div>
+  <div class="story-block">
+    <div class="story-label">// chapter 03 — darkmode ai is born</div>
+    <p class="story-text">We built it. Tested it. Refined it. And made it available to anyone who believes their <span>data is their own business</span>. Today DarkModeAI ships plug-and-play AI flash drives to everyday people, professionals, and businesses who refuse to compromise on privacy.</p>
+  </div>
+</div>
+<div class="section">
+  <div class="section-tag">// what we stand for</div>
+  <h2>Our core values.</h2>
+  <div class="values">
+    <div class="value"><div class="value-num">01</div><div class="value-title">PRIVACY FIRST</div><div class="value-text">Your conversations are yours. We never see them. Neither does anyone else.</div></div>
+    <div class="value"><div class="value-num">02</div><div class="value-title">ACCESS FOR ALL</div><div class="value-text">AI shouldn't be locked behind paywalls or require technical knowledge to use.</div></div>
+    <div class="value"><div class="value-num">03</div><div class="value-title">OWN YOUR TOOLS</div><div class="value-text">Pay once. Use forever. No subscriptions. No renewals. No surprises.</div></div>
+    <div class="value"><div class="value-num">04</div><div class="value-title">STAY OFFLINE</div><div class="value-text">Works anywhere. Planes, basements, rural areas, anywhere without WiFi.</div></div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-tag">// our manifesto</div>
+  <div class="manifesto">
+    <div class="manifesto-tag">// we believe</div>
+    <ul>
+      <li>Your data should never leave your hands</li>
+      <li>AI should work without an internet connection</li>
+      <li>Privacy is not a luxury — it's a right</li>
+      <li>Technology should empower people, not surveil them</li>
+      <li>You shouldn't pay monthly fees to think privately</li>
+      <li>The best AI is the one you actually own</li>
+    </ul>
+  </div>
+</div>
+<div class="section">
+  <div class="section-tag">// location</div>
+  <div class="values">
+    <div class="value"><div class="value-num">[?]</div><div class="value-title">UNDISCLOSED</div><div class="value-text">We operate from an undisclosed location. Some things are better kept in the dark.</div></div>
+    <div class="value"><div class="value-num">[+]</div><div class="value-title">SHIPS EVERYWHERE</div><div class="value-text">We ship domestically and internationally. Your privacy has no borders.</div></div>
+    <div class="value"><div class="value-num">[~]</div><div class="value-title">ALWAYS REACHABLE</div><div class="value-text">Questions? We respond within 24 hours. Even ghosts check their messages.</div></div>
+  </div>
+</div>
+<div class="cta">
+  <div class="cta-tag">// ready to go dark?</div>
+  <h2>Your private AI is waiting.</h2>
+  <p class="cta-sub">Join the growing number of people who refused to hand their intelligence over to the cloud.</p>
+  <a href="shop.html"><button class="btn-primary">SHOP NOW</button></a>
+  <a href="contact.html"><button class="btn-ghost">CONTACT US</button></a>
+</div>
+<footer>
+  <p>// darkmodeai.net &nbsp;|&nbsp; operating in the shadows since 2026 &nbsp;|&nbsp; all rights reserved <span class="blink">_</span></p>
+</footer>
+</body>
+</html>

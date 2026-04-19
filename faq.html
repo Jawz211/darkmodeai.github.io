@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — DarkModeAI</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#000;color:#00ff41;font-family:'Courier New',monospace;}
+  a{text-decoration:none;color:inherit;}
+  .terminal-bar{background:#001a00;padding:8px 24px;font-size:11px;color:#00ff4166;letter-spacing:1px;border-bottom:1px solid #00ff4122;}
+  .blink{animation:blink 1.2s step-end infinite;}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:1px solid #00ff4133;}
+  .logo{font-size:18px;font-weight:500;letter-spacing:2px;}
+  .logo span{color:#00ff4166;}
+  .nav-links{display:flex;gap:24px;}
+  .nav-links a{color:#00ff4199;font-size:13px;letter-spacing:1px;}
+  .nav-links a:hover,.nav-links a.active{color:#00ff41;}
+  .hero{padding:40px 24px 32px;border-bottom:1px solid #00ff4122;text-align:center;}
+  .hero-tag{font-size:11px;letter-spacing:3px;color:#00ff4166;margin-bottom:12px;}
+  .hero h1{font-size:24px;font-weight:500;margin-bottom:12px;letter-spacing:1px;}
+  .hero-sub{font-size:13px;color:#00ff4199;max-width:480px;margin:0 auto;line-height:1.7;}
+  .section{padding:32px 24px;border-bottom:1px solid #00ff4122;}
+  .cat-title{font-size:11px;letter-spacing:3px;color:#00ff41;font-weight:500;padding:8px 12px;background:#001a00;border-left:3px solid #00ff41;margin-bottom:16px;}
+  .faq-item{border-bottom:1px solid #00ff4111;padding:14px 0;}
+  .faq-q{font-size:13px;color:#00ff41;margin-bottom:8px;}
+  .faq-q::before{content:"Q: ";color:#00ff4166;}
+  .faq-a{font-size:12px;color:#00ff4199;line-height:1.7;}
+  .faq-a::before{content:"A: ";color:#00ff4166;}
+  .faq-a span{color:#00ff41;}
+  .tag{display:inline-block;font-size:9px;letter-spacing:1px;color:#000;background:#00ff41;padding:1px 6px;margin-left:8px;vertical-align:middle;}
+  .tag.warn{background:#ff4444;color:#000;}
+  .cta{padding:40px 24px;text-align:center;border-bottom:1px solid #00ff4122;}
+  .cta-tag{font-size:11px;letter-spacing:3px;color:#00ff4166;margin-bottom:12px;}
+  .cta h2{font-size:20px;font-weight:500;margin-bottom:8px;}
+  .cta-sub{font-size:13px;color:#00ff4199;margin-bottom:24px;}
+  .btn-primary{background:#00ff41;color:#000;border:none;padding:12px 32px;font-family:'Courier New',monospace;font-size:13px;letter-spacing:2px;cursor:pointer;font-weight:500;}
+  .btn-ghost{background:transparent;color:#00ff41;border:1px solid #00ff4166;padding:12px 32px;font-family:'Courier New',monospace;font-size:13px;letter-spacing:2px;cursor:pointer;margin-left:12px;}
+  footer{padding:24px;text-align:center;border-top:1px solid #00ff4122;}
+  footer p{font-size:11px;color:#00ff4133;letter-spacing:2px;}
+  @media(max-width:600px){.nav-links{gap:12px;}.hero h1{font-size:20px;}.btn-ghost{margin-left:0;margin-top:12px;}}
+</style>
+</head>
+<body>
+<div class="terminal-bar">// file: faq.exe &nbsp;|&nbsp; answers: loaded &nbsp;|&nbsp; status: operational <span class="blink">_</span></div>
+<nav>
+  <div class="logo">DARKMODE<span>AI</span></div>
+  <div class="nav-links">
+    <a href="index.html">home</a>
+    <a href="about.html">about</a>
+    <a href="shop.html">shop</a>
+    <a href="faq.html" class="active">faq</a>
+    <a href="contact.html">contact</a>
+  </div>
+</nav>
+<div class="hero">
+  <div class="hero-tag">// frequently asked questions</div>
+  <h1>Everything you need to know.</h1>
+  <p class="hero-sub">Can't find your answer here? Reach us at contact@darkmodeai.net — we respond within 24 hours.</p>
+</div>
+
+<div class="section">
+  <div class="cat-title">// 01 — general questions</div>
+  <div class="faq-item"><div class="faq-q">What exactly is DarkModeAI?</div><div class="faq-a">DarkModeAI is a <span>plug and play flash drive</span> pre-loaded with powerful AI models that run entirely on your computer. No internet, no cloud, no subscriptions. Just plug it in and start chatting with your own private AI assistant.</div></div>
+  <div class="faq-item"><div class="faq-q">How is this different from ChatGPT or Claude?</div><div class="faq-a">Cloud AI services like ChatGPT store your conversations on their servers, require internet, and charge monthly fees. DarkModeAI runs <span>100% locally on your device</span> — nothing is ever transmitted anywhere. You also pay once and own it forever with no recurring fees.</div></div>
+  <div class="faq-item"><div class="faq-q">Is this legal?</div><div class="faq-a">Yes, completely. The AI models included are <span>open source</span> and freely available for personal and commercial use. Running AI locally on your own hardware is entirely legal worldwide.</div></div>
+  <div class="faq-item"><div class="faq-q">Who is DarkModeAI for?</div><div class="faq-a">Anyone who values privacy, portability and ownership. Our customers include <span>everyday people, students, writers, small business owners, lawyers, doctors, travelers</span> and anyone who wants AI without giving up their data or paying monthly fees.</div></div>
+  <div class="faq-item"><div class="faq-q">How smart is the AI compared to ChatGPT?</div><div class="faq-a">The models included are <span>genuinely impressive</span> for everyday tasks like writing, research, coding and analysis. For most common uses they perform comparably to ChatGPT. However very large cloud models like GPT-4 may handle extremely complex reasoning slightly better due to their larger size.</div></div>
+</div>
+
+<div class="section">
+  <div class="cat-title">// 02 — privacy and security</div>
+  <div class="faq-item"><div class="faq-q">Is my data really private?</div><div class="faq-a"><span>100% yes.</span> Everything runs locally on your machine. Your conversations are never transmitted, logged, stored or seen by anyone — not by us, not by any server, not by anyone. What you type stays on your device permanently.</div></div>
+  <div class="faq-item"><div class="faq-q">Does DarkModeAI collect any data about me?</div><div class="faq-a"><span>Zero data collected.</span> We have no way to see your conversations, usage patterns or any information. The AI runs entirely on your hardware with no connection back to us or anyone else.</div></div>
+  <div class="faq-item"><div class="faq-q">Is it safe to use on a work computer?</div><div class="faq-a">Yes. Nothing is installed on the host computer and nothing is transmitted over the network. The app runs directly from the flash drive leaving <span>no trace</span> on the computer when you unplug it.</div></div>
+  <div class="faq-item"><div class="faq-q">Can my employer see what I'm doing with it?</div><div class="faq-a">No network traffic is generated by the AI itself so there is nothing for network monitoring to detect. However we always recommend <span>following your employer's policies</span> regarding personal device use at work.</div></div>
+</div>
+
+<div class="section">
+  <div class="cat-title">// 03 — setup and compatibility</div>
+  <div class="faq-item"><div class="faq-q">What computers does it work on?</div><div class="faq-a">Any <span>Windows 10/11 or Mac OS 10.15+</span> computer with at least 8GB of RAM and a USB 3.0 port. This covers virtually all computers made after 2015.</div></div>
+  <div class="faq-item"><div class="faq-q">Do I need to install anything?</div><div class="faq-a"><span>Nothing at all.</span> The app and all AI models live on the flash drive. Just plug it in, open the app directly from the drive and start chatting. No admin rights needed.</div></div>
+  <div class="faq-item"><div class="faq-q">How long does it take to set up?</div><div class="faq-a">From plugging in to first response takes about <span>2-3 minutes</span> — 30-60 seconds for the drive to be recognized, 30-60 seconds to open the app, and 30-60 seconds for the model to load into memory.</div></div>
+  <div class="faq-item"><div class="faq-q">Does it work on Chromebooks?</div><div class="faq-a">Unfortunately <span>no</span> — Chromebooks run Chrome OS which is not compatible with LM Studio. You need a Windows or Mac computer.</div></div>
+  <div class="faq-item"><div class="faq-q">Does it work on Linux?</div><div class="faq-a">Linux is not officially supported in our current packages. If you are a Linux user contact us at <span>contact@darkmodeai.net</span> and we can discuss options.</div></div>
+  <div class="faq-item"><div class="faq-q">Can I use it on multiple computers?</div><div class="faq-a"><span>Yes!</span> That's one of the best features. Plug it into any compatible Windows or Mac computer and run your AI directly from the drive. It works on as many computers as you want.</div></div>
+</div>
+
+<div class="section">
+  <div class="cat-title">// 04 — what the ai can and cannot do</div>
+  <div class="faq-item"><div class="faq-q">What is the AI great at?</div><div class="faq-a">Writing emails and documents, coding help, brainstorming ideas, research and summaries, explaining complex topics, math and analysis, language translation, editing and proofreading, business advice, general knowledge questions and <span>any task based on reasoning and language.</span></div></div>
+  <div class="faq-item"><div class="faq-q">What can the AI NOT do? <span class="tag warn">important</span></div><div class="faq-a">Since the AI has no internet connection it <span>cannot access real time information</span> such as live sports scores, current stock prices, today's news, live weather, recent events after its training date, or anything requiring a live data connection.</div></div>
+  <div class="faq-item"><div class="faq-q">Can I ask it about tonight's game or current sports stats?</div><div class="faq-a">Unfortunately <span>no</span> — the AI has no internet access and cannot retrieve live data. For current scores, stats or news your regular browser works best. DarkModeAI excels at tasks that don't require live information.</div></div>
+  <div class="faq-item"><div class="faq-q">How current is the AI's knowledge?</div><div class="faq-a">The included models have a <span>training cutoff of early 2024</span> — meaning they have strong knowledge of events and information up to that point but may not know about very recent developments after that date.</div></div>
+  <div class="faq-item"><div class="faq-q">Can I give it documents or files to read?</div><div class="faq-a"><span>Yes!</span> You can paste text directly into the chat from any document, email or webpage and the AI will analyze, summarize or work with that content. Some models also support direct file uploads within LM Studio.</div></div>
+</div>
+
+<div class="section">
+  <div class="cat-title">// 05 — performance and speed</div>
+  <div class="faq-item"><div class="faq-q">Why does it take 30-60 seconds to start?</div><div class="faq-a">The AI model needs to load from the flash drive into your computer's RAM before it can respond. This only happens <span>once at startup</span> — after that responses come quickly.</div></div>
+  <div class="faq-item"><div class="faq-q">How fast are the responses?</div><div class="faq-a">Once loaded response speed depends on your computer's RAM and CPU. On a modern computer with 16GB RAM expect <span>comfortable conversational speed</span> — not instant like cloud AI but fast enough for natural back and forth conversation.</div></div>
+  <div class="faq-item"><div class="faq-q">Will it slow down my computer?</div><div class="faq-a">The AI uses your computer's RAM and CPU while running. We recommend <span>closing other heavy apps</span> while using it for best performance. Once you close LM Studio your computer returns to normal immediately.</div></div>
+  <div class="faq-item"><div class="faq-q">Does more RAM make it faster?</div><div class="faq-a"><span>Yes significantly.</span> 8GB RAM is the minimum and works fine. 16GB gives noticeably better speed. 32GB+ gives excellent performance. More RAM allows larger models to run more smoothly.</div></div>
+</div>
+
+<div class="section">
+  <div class="cat-title">// 06 — ordering and shipping</div>
+  <div class="faq-item"><div class="faq-q">How long does shipping take?</div><div class="faq-a">Each drive is <span>set up and tested by hand</span> before shipping. Allow 3-5 business days for processing plus standard shipping time to your location.</div></div>
+  <div class="faq-item"><div class="faq-q">Do you ship internationally?</div><div class="faq-a"><span>Yes!</span> We ship worldwide. International shipping times vary by location. Contact us at contact@darkmodeai.net for international shipping rates.</div></div>
+  <div class="faq-item"><div class="faq-q">What if my drive arrives damaged or not working?</div><div class="faq-a">Contact us within <span>14 days</span> of receiving your order and we will make it right — replacement or full refund. Every drive is tested before shipping but we stand behind every unit we send out.</div></div>
+  <div class="faq-item"><div class="faq-q">Can I return it if I change my mind?</div><div class="faq-a">Contact us within <span>14 days</span> of receiving your order. We handle returns case by case and want every customer to be happy with their purchase.</div></div>
+</div>
+
+<div class="section">
+  <div class="cat-title">// 07 — support and upgrades</div>
+  <div class="faq-item"><div class="faq-q">What support is included with my package?</div><div class="faq-a">Basic package includes email support for setup questions. Standard package includes <span>30 days support.</span> Premium package includes <span>90 days support.</span> All support is via email at contact@darkmodeai.net.</div></div>
+  <div class="faq-item"><div class="faq-q">Can I add more AI models to my drive later?</div><div class="faq-a"><span>Yes!</span> Your drive has plenty of storage space. With an internet connection you can download additional models directly through LM Studio and add them to your drive anytime.</div></div>
+  <div class="faq-item"><div class="faq-q">Can I upgrade from Basic to Standard?</div><div class="faq-a">Contact us at <span>contact@darkmodeai.net</span> and we can discuss upgrade options for existing customers.</div></div>
+  <div class="faq-item"><div class="faq-q">How do I contact support?</div><div class="faq-a">Email us at <span>contact@darkmodeai.net</span> — we respond within 24 hours Monday to Friday. For urgent issues include ORDER in your subject line.</div></div>
+</div>
+
+<div class="cta">
+  <div class="cta-tag">// still have questions?</div>
+  <h2>We're here to help.</h2>
+  <p class="cta-sub">Can't find what you're looking for? Send us a message and we'll get back to you within 24 hours.</p>
+  <a href="contact.html"><button class="btn-primary">CONTACT US</button></a>
+  <a href="shop.html"><button class="btn-ghost">SHOP NOW</button></a>
+</div>
+
+<footer>
+  <p>// darkmodeai.net &nbsp;|&nbsp; operating in the shadows since 2026 &nbsp;|&nbsp; all rights reserved <span class="blink">_</span></p>
+</footer>
+</body>
+</html>
